@@ -1,0 +1,92 @@
+
+/* Master Styles */
+h1 {
+  color: #ffb3b3;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 180%;
+}
+
+h2 {
+  color: #8080ff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 150%;
+}
+
+h3 {
+  color: #4B0082;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+}
+
+h6 {
+  color: #800000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 90%;
+}
+
+body {
+  margin: 2em;
+}
+body {
+  color: #cc6699;
+  font-family: Cambria, Georgia;
+}
+
+button {
+  color: #8080ff;
+  font-family: Cambria, Georgia;
+}
+
+input[text] {
+  color: #000000;
+  font-family: Cambria, Georgia;
+}
+/* a {
+  cursor: pointer;
+  cursor: hand;
+} */
+button {
+  font-family: Arial;
+  background-color: 	 #f2ffcc;
+  padding: 15px 35px;
+  border-radius: 5px;
+  margin:0 auto;
+  display:block;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: 	#fff2cc;
+}
+button:disabled {
+  background-color: 	#ffffcc;
+  color: 	#d9ccff;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+/* nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+} */
+/* nav a:visited, a:link {
+  color: #607D8B;
+} */
+/* nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: red;
+} */
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}

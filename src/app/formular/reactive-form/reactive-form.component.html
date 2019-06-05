@@ -1,0 +1,189 @@
+<div class="container">
+
+  <h2>
+    <div style="text-align: center">Formularz zgłoszeniowy</div>
+  </h2>
+
+  <h3>
+    <div style="text-align: center">Wprowadź informacje, niezbędne do procesu rejestracji</div>
+  </h3>
+  <br>
+
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div style="display: inline-grid;">
+
+
+
+      <div class="form-group">
+
+        <label for="name">Imię: </label>
+        <input type="text" id="name" formControlName="name">
+        <div style="color: #FF0000" *ngIf="contactForm.get('name').errors && contactForm.get('name').touched"><i>Imię
+            wymagane</i></div>
+        <div style="color: #FF0000" *ngIf="contactForm.get('name').invalid && contactForm.get('name').touched"><i>Imię
+            musi mieć minimum 3 znaki</i>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="surname">Nazwisko: </label>
+        <input type="text" id="surname" formControlName="surname">
+        <div style="color: #FF0000" *ngIf="contactForm.get('surname').errors && contactForm.get('surname').touched">
+          <i>Nazwisko wymagane</i></div>
+        <div style="color: #FF0000" *ngIf="contactForm.get('surname').invalid && contactForm.get('surname').touched">
+          <i>Nazwisko musi mieć minimum
+            3 znaki</i></div>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="email">E-mail: </label>
+        <input type="text" id="email" formControlName="email">
+        <div style="color: #FF0000" *ngIf="contactForm.get('email').errors && contactForm.get('email').touched"><i>Adres
+            e-mail wymagany</i></div>
+        <div style="color: #FF0000" *ngIf="contactForm.get('email').touched && contactForm.get('email').invalid"><i>Zły
+            adres e-mail</i></div>
+      </div>
+      <br>
+
+      <!-- TELEFON -->
+      <div class="form-group">
+        <label for="phone">Telefon: </label>
+        <input type="text" id="phone" formControlName="phone">
+        <!-- <div style="color: #FF0000" *ngIf="contactForm.get('phone').errors"><i>Zły numer telefonu</i></div> -->
+
+      </div>
+      <br>
+
+
+      <!-- PASSWORD OK -->
+      <div class="form-group">
+        <label>Hasło: </label>
+        <input type="password" id="password" formControlName="password">
+        <div style="color: #FF0000" *ngIf="contactForm.get('password').touched && contactForm.get('password').invalid">
+          <i>Hasło musi mieć co najmniej 8 znaków, przynajmniej
+            jedną wielką literę oraz jeden ze znaków: @ # $ % ^ &</i>
+        </div>
+      </div>
+      <br>
+
+      <!-- POTWIERDŹ HASŁO -->
+      <div class="form-group">
+        <label>Potwierdź hasło: </label>
+        <input type="password" id="confirmPassword" formControlName="confirmPassword">
+        <div style="color: #FF0000"
+          *ngIf="contactForm.get('confirmPassword').touched && contactForm.get('confirmPassword').invalid">
+          <i>Hasło musi mieć co najmniej 8 znaków, przynajmniej
+            jedną wielką literę oraz jeden ze znaków: @ # $ % ^ &</i>
+        </div>
+      </div>
+      <br>
+
+      <!-- ZWIEZRZĘ -->
+
+      <div class="form-group">
+        <label style="color: navy">Zwierzę: </label>
+        <div class="form-control">
+          <label class="radio-inline">
+            <!-- <br>
+            <input type="radio" formControlName= "bot" id="animalDog" value="dog" >
+            Pies
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" formControlName= "bot" id="animalCat"  value="cat">
+            Kot
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" formControlName= "bot" id="animalOther" value="other" >
+            Inne
+          </label> -->
+
+            <br>
+            <input type="radio" formControlName="pet" id="animalDog" value="dog">
+            Pies
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" formControlName="pet" id="animalCat" value="cat">
+            Kot
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" formControlName="pet" id="animalOther" value="other">
+            Inne
+          </label>
+
+
+        </div>
+      </div>
+      <br>
+      <!--  ADRES: city,street, building, flatNo -->
+
+      <div class="form-group">
+        <label for="address" style="color: navy">Adres: </label>
+      </div>
+      <br>
+
+      <div class="form-group">
+
+        <label for="city">Miasto: </label>
+        <input type="text" id="city" formControlName="city">
+        <div style="color: #FF0000" *ngIf="contactForm.get('city').errors && contactForm.get('city').touched"><i>Miasto
+            wymagane</i></div>
+        <div style="color: #FF0000" *ngIf="contactForm.get('city').invalid && contactForm.get('city').touched"><i>Miasto
+            musi mieć minimum 3 znaki</i>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group">
+
+        <label for="city">Ulica: </label>
+        <input type="text" id="street" formControlName="street">
+        <div style="color: #FF0000" *ngIf="contactForm.get('street').errors && contactForm.get('street').touched"><i>Ulica
+            wymagana</i></div>
+        <div style="color: #FF0000" *ngIf="contactForm.get('street').invalid && contactForm.get('street').touched"><i>Ulica
+            musi mieć minimum 3 znaki</i>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group">
+
+        <label for="building">Numer domu: </label>
+        <input type="text" id="building" formControlName="building">
+        <div style="color: #FF0000" *ngIf="contactForm.get('building').errors && contactForm.get('building').touched"><i>Numer domu
+            wymagany</i></div>
+        <div style="color: #FF0000" *ngIf="contactForm.get('building').invalid && contactForm.get('building').touched"><i>Numer domu
+            musi mieć minimum 1 znak</i>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="flatNo">Nr mieszkania: </label>
+        <input type="text" id="flatNo" formControlName="flatNo">
+        <!-- <div style="color: #FF0000" *ngIf="contactForm.get('flatNo').errors"><i>Zły numer mieszkania</i></div> -->
+
+      </div>
+      <br>
+
+
+
+
+      <!--  -->
+
+      <br>
+      <br>
+      <div class="form-group">
+        <button type="submit" [disabled]="contactForm.invalid">Wyslij</button>
+        <br>
+        <button type="button" (click)="onReset()">Reset</button>
+      </div>
+
+    </div>
+  </form>
