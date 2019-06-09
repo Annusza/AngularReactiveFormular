@@ -39,77 +39,55 @@ export class ReactiveFormComponent implements OnInit {
   ngOnInit() {
     this.contactForm = new FormGroup(
       {
-        name: new FormControl(null, [
+        name: new FormControl('', [
           Validators.required,
           Validators.minLength(3)
         ]),
-        surname: new FormControl(null, [
+        surname: new FormControl('', [
           Validators.required,
           Validators.minLength(3)
         ]),
-        email: new FormControl(null, [Validators.required, Validators.email]),
-        phone: new FormControl(null, [Validators.required, Validators.pattern('^[0-9-+\ )(].{8,}$')
+        email: new FormControl('', [Validators.required, Validators.email]),
+        phone: new FormControl(null, [Validators.pattern('^[0-9-+\ )(].{8,}$')
       ]),
-        password: new FormControl(null, [
+
+    //   phone: new FormControl(null, (null || [Validators.required, Validators.pattern('^[0-9-+\ )(].{8,}$')
+    // ])),
+
+        password: new FormControl('', [
           Validators.required,
           Validators.pattern('^(?=.*[A-Z])(?=.*[!@#$%^&])[A-Za-z!@#$%^&]{8,}$')
         ]),
-        confirmPassword: new FormControl(null, Validators.required),
+        confirmPassword: new FormControl('', Validators.required),
 
         // confirmPassword: new FormControl (null,  [Validators.required, matchPassword('password')]),
-        pet: new FormControl(null),
+        pet: new FormControl('other', [Validators.required]),
 
-        city: new FormControl(null, [
+        city: new FormControl('', [
           Validators.required,
           Validators.minLength(3)
         ]),
 
-        street: new FormControl(null, [
+        street: new FormControl('', [
           Validators.required,
           Validators.minLength(3)
         ]),
 
-        building: new FormControl(null, [
+        building: new FormControl('', [
           Validators.required,
           Validators.minLength(1)
         ]),
 
         flatNo: new FormControl(null),
 
-        newsletter: new FormControl(null, Validators.requiredTrue),
+        newsletter: new FormControl(false, Validators.requiredTrue),
 
-        sms: new FormControl(null, Validators.requiredTrue)
+        sms: new FormControl(null)
 
       },
       { validators: passwordMatchValidator }
     );
-
-  //   this.contactForm.get('name').valueChanges.subscribe(value => {
-  //     console.log(value);
-  //   });
-  //   this.contactForm.get('surname').valueChanges.subscribe(value => {
-  //     console.log(value);
-  //   });
-  //   this.contactForm.get('email').statusChanges.subscribe(value => {
-  //     console.log(value);
-  //   });
-  //   this.contactForm.get("phone").statusChanges.subscribe(value => {
-  //     console.log(value);
-  //   });
-  //   this.contactForm.get('password').statusChanges.subscribe(value => {
-  //     console.log(value);
-  //   });
-
-  //   this.contactForm.get('confirmPassword').statusChanges.subscribe(value => {
-  //     console.log(value);
-  //   });
-
-  // this.contactForm.get('pet').statusChanges.subscribe(value => {
-  //     console.log(value);
-  //   });
   }
-
-
 
   onSubmit() {
 
@@ -118,7 +96,7 @@ export class ReactiveFormComponent implements OnInit {
     let name = this.contactForm.value.name.trim();
     let surname = this.contactForm.value.surname.trim();
     let email = this.contactForm.value.email.trim();
-    let phone = this.contactForm.value.phone.trim();
+    let phone = this.contactForm.value.phone;
     let password = this.contactForm.value.password.trim();
     let pet = this.contactForm.value.pet;
 
@@ -127,7 +105,7 @@ export class ReactiveFormComponent implements OnInit {
     let city = this.contactForm.value.city.trim();
     let street = this.contactForm.value.street.trim();
     let building = this.contactForm.value.building.trim();
-    let flatNo = this.contactForm.value.flatNo.trim();
+    let flatNo = this.contactForm.value.flatNo;
 
     let newsletter = this.contactForm.value.newsletter;
     let sms = this.contactForm.value.sms;
