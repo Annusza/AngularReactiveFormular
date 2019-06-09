@@ -87,20 +87,7 @@
         <label style="color: navy">Zwierzę: </label>
         <div class="form-control">
           <label class="radio-inline">
-            <!-- <br>
-            <input type="radio" formControlName= "bot" id="animalDog" value="dog" >
-            Pies
-          </label>
 
-          <label class="radio-inline">
-            <input type="radio" formControlName= "bot" id="animalCat"  value="cat">
-            Kot
-          </label>
-
-          <label class="radio-inline">
-            <input type="radio" formControlName= "bot" id="animalOther" value="other" >
-            Inne
-          </label> -->
 
             <br>
             <input type="radio" formControlName="pet" id="animalDog" value="dog">
@@ -167,13 +154,23 @@
       <div class="form-group">
         <label for="flatNo">Nr mieszkania: </label>
         <input type="text" id="flatNo" formControlName="flatNo">
-        <!-- <div style="color: #FF0000" *ngIf="contactForm.get('flatNo').errors"><i>Zły numer mieszkania</i></div> -->
+        <div style="color: #FF0000" *ngIf="contactForm.get('flatNo').errors"><i>Zły numer mieszkania</i></div>
 
       </div>
       <br>
 
+      <div class="form-group">
+        <label for="newsletter">Zgoda na otrzymywanie wiadomości e-mail
+        <input type="checkbox" id="newsletter" formControlName="newsletter"></label>
+        <div style="color: #808080" *ngIf="contactForm.get('newsletter').pristine">Zaznacz lub odznacz zgodę na newsletter</div>
+      </div>
+      <br>
 
+      <div class="form-group">
+        <label for="sms">Zgoda na otrzymywanie wiadomości sms
+          <input type="checkbox" id="sms" formControlName="sms"></label>
 
+      </div>
 
       <!--  -->
 
@@ -187,3 +184,4 @@
 
     </div>
   </form>
+  </div>

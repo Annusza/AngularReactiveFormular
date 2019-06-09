@@ -123,6 +123,7 @@ export class ReactiveFormComponent implements OnInit {
     let pet = this.contactForm.value.pet;
 
 
+    //let city = this.contactForm.value.address.city.trim();
     let city = this.contactForm.value.city.trim();
     let street = this.contactForm.value.street.trim();
     let building = this.contactForm.value.building.trim();
