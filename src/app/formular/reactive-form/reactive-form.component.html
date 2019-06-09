@@ -166,11 +166,13 @@
       </div>
       <br>
 
-      <div class="form-group">
+
+      <div class="form-group" *ngIf="contactForm.get('phone').valid && contactForm.get('phone').value">
         <label for="sms">Zgoda na otrzymywanie wiadomości sms
-          <input type="checkbox" id="sms" formControlName="sms"></label>
+          <input type="checkbox" id="sms" formControlName="sms" ></label>
 
       </div>
+
 
       <!--  -->
 
