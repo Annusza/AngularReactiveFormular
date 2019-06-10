@@ -162,14 +162,14 @@
       <div class="form-group">
         <label for="newsletter">Zgoda na otrzymywanie wiadomości e-mail
         <input type="checkbox" id="newsletter" formControlName="newsletter"></label>
-        <div style="color: #808080" *ngIf="contactForm.get('newsletter').pristine">Zaznacz lub odznacz zgodę na newsletter</div>
+        <div style="color: #808080" *ngIf="contactForm.get('newsletter').pristine">(Zgoda wymagana)</div>
       </div>
       <br>
 
 
       <div class="form-group" *ngIf="contactForm.get('phone').valid && contactForm.get('phone').value">
         <label for="sms">Zgoda na otrzymywanie wiadomości sms
-          <input type="checkbox" id="sms" formControlName="sms" ></label>
+          <input type="checkbox" id="sms" formControlName="sms" value="false" ></label>
 
       </div>
 
