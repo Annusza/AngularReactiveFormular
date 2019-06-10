@@ -82,7 +82,7 @@ export class ReactiveFormComponent implements OnInit {
 
         newsletter: new FormControl(false, Validators.requiredTrue),
 
-        sms: new FormControl(null)
+        sms: new FormControl(false)
 
       },
       { validators: passwordMatchValidator }
@@ -126,8 +126,8 @@ export class ReactiveFormComponent implements OnInit {
         flatNo: flatNo
       },
       consents : {
-        newsletter: true,
-        sms: true
+        newsletter: newsletter,
+        sms: sms
       }
     };
 
